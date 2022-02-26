@@ -20,6 +20,8 @@ class ImageHover {
     stagger = 0;
     // Scale interval between inner image elements
     scaleInterval = 0.1;
+    // Rotation interval between inner image elements
+    rotationInterval = 0;
     // Total number of inner image elements
     innerTotal = 4;
     // Main element transform origin
@@ -40,6 +42,7 @@ class ImageHover {
         this.ease = this.DOM.el.dataset.repetitionEase || this.ease;
         this.stagger = this.DOM.el.dataset.repetitionStagger || this.stagger;
         this.scaleInterval = this.DOM.el.dataset.repetitionScaleInterval || this.scaleInterval;
+        this.rotationInterval = this.DOM.el.dataset.repetitionRotationInterval || this.rotationInterval;
         this.innerTotal = this.DOM.el.dataset.repetitionCount || this.innerTotal;
         this.transformOrigin = this.DOM.el.dataset.repetitionOrigin || this.transformOrigin;
         
@@ -87,11 +90,16 @@ class ImageHover {
             let scaleValue = 1 - this.scaleInterval * i;
             return scaleValue >= 0 ? scaleValue : 0;
         };
+
+        const getRotationValue = i => {
+            return i ? i*this.rotationInterval : 0;
+        };
         
         // Create the gsap timeline
         this.hoverTimeline = gsap.timeline({paused: true})
         .to(this.DOM.innerElems, {
             scale: i => getScaleValue(i),
+            rotation: i => getRotationValue(i),
             duration: this.duration,
             ease: this.ease,
             stagger: this.stagger

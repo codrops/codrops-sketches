@@ -1,2 +1,2 @@
 # Codrops Sketches
-A collection of demo variations, ideas, concepts &amp; experiments.
+A collection of demo variations, ideas, raw concepts &amp; experiments.

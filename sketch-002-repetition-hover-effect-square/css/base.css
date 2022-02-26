@@ -10,10 +10,10 @@
 
 body {
 	margin: 0;
-	--color-text: #000;
-	--color-bg: #898686;
+	--color-text: #b2b8ac;
+	--color-bg: #091f22;
 	--color-link: #fff;
-	--color-link-hover: #000;
+	--color-link-hover: #b2b8ac;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
@@ -79,10 +79,10 @@ a:focus-visible {
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
-	width: min(70vmin, 450px);
-	height: min(70vmin, 450px);
-	border-radius: 50%;
+	width: 60vmin;
+	height: 60vmin;
 	background-size: cover;
+	background-position: 50% 50%;
 }
 
 .image__element {
@@ -94,7 +94,7 @@ a:focus-visible {
 	will-change: transform;
 	border-radius: inherit;
 	background-size: inherit;
-	background-position: 50% 0%;
+	background-position: inherit;
 }
 
 @media screen and (min-width: 53em) {
@@ -106,7 +106,7 @@ a:focus-visible {
 	.frame {
 		padding: 1.5rem 2rem 0;
 		display: grid;
-		grid-template-columns: auto 1fr 1fr;
+		grid-template-columns: auto 1fr auto;
 		grid-template-areas: 'title links sponsor';
 		grid-gap: 3vw;
 		justify-content: space-between;
