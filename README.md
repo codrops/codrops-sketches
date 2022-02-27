@@ -2,7 +2,7 @@
 A collection of demo variations, ideas, raw concepts &amp; experiments.
 
 ## Demos
-<details>
+<details open>
   <summary>2022</summary>
   
   - [Sketch 001: Repetition Hover Effect (Round)](https://tympanus.net/Sketches/001-repetition-hover-effect-round/)
