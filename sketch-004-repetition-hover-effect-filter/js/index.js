@@ -92,16 +92,20 @@ class ImageHover {
         };
 
         const getRotationValue = i => i ? i*this.rotationInterval : 0;
-        
+
+        const getFilterValue = i => i ? `hue-rotate(${(i+1)*20}deg)` : 'hue-rotate(0deg)';
+
         // Create the gsap timeline
         this.hoverTimeline = gsap.timeline({paused: true})
         .to(this.DOM.innerElems, {
             scale: i => getScaleValue(i),
             rotation: i => getRotationValue(i),
+            filter: i => getFilterValue(i),  
+            startAt: {filter: 'hue-rotate(0deg)'},
             duration: this.duration,
             ease: this.ease,
             stagger: this.stagger
-        });
+        })
     }
 
     /**

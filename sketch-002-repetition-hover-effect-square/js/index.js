@@ -91,9 +91,7 @@ class ImageHover {
             return scaleValue >= 0 ? scaleValue : 0;
         };
 
-        const getRotationValue = i => {
-            return i ? i*this.rotationInterval : 0;
-        };
+        const getRotationValue = i => i ? i*this.rotationInterval : 0;
         
         // Create the gsap timeline
         this.hoverTimeline = gsap.timeline({paused: true})

@@ -10,10 +10,10 @@
 
 body {
 	margin: 0;
-	--color-text: #858fe7;
-	--color-bg: #0e0e0e;
+	--color-text: #b2b8ac;
+	--color-bg: #000;
 	--color-link: #fff;
-	--color-link-hover: #858fe7;
+	--color-link-hover: #b2b8ac;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
@@ -79,9 +79,9 @@ a:focus-visible {
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
-	width: min(70vmin, 450px);
-	height: min(70vmin, 450px);
-	border-radius: 50%;
+	width: 50vmin;
+	height: 60vmin;
+	border-radius: 3%;
 	background-size: cover;
 	background-position: 50% 50%;
 }
@@ -92,7 +92,7 @@ a:focus-visible {
 	grid-area: 1 / 1 / 2 / 2;
 	width: 100%;
 	height: 100%;
-	will-change: transform;
+	will-change: transform, filter;
 	border-radius: inherit;
 	background-size: inherit;
 	background-position: inherit;
