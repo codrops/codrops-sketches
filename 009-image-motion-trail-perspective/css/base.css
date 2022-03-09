@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	--color-text: #b2b8ac;
+	--color-bg: #161b1b;
+	--color-link: #fff;
+	--color-link-hover: #b2b8ac;
+	color: var(--color-text);
+	background: var(--color-bg) url(../img/bg.png);
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+a:focus {
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	background: transparent;
+}
+
+a:focus-visible {
+	outline: 2px solid red;
+	background: transparent;
+}
+
+.frame {
+	padding: 1.5rem 2rem 10vh;
+	text-align: center; 
+	position: relative;
+}
+
+.frame__title {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.frame__links {
+	margin: 0.5rem 0 2rem;
+}
+
+.frame__links a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.content {
+	flex: 1;
+	display: grid;
+	place-items: center;
+}
+
+.trail {
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.no-js .trail {
+	width: 250px;
+	height: 375px;
+	background-size: cover;
+}
+
+.trail__img {
+	max-height: 65vh;
+	position: relative;
+	will-change: transform;
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+@media screen and (min-width: 53em) {
+	main {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	.frame {
+		padding: 1.5rem 2rem 0;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		grid-template-areas: 'title links sponsor';
+		grid-gap: 3vw;
+		justify-content: space-between;
+		text-align: left;
+	}
+	.frame__links {
+		margin: 0;
+	}
+}
