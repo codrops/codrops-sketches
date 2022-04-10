@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sketch 019: Image Motion Effect with SVG Filter Demo | Codrops</title>
+		<meta name="description" content="An image motion effect with SVG filter." />
+		<meta name="keywords" content="image motion, codrops sketch, svg filter" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="https://tympanus.net/Sketches/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser");</script>
+		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+	</head>
+	<body>
+		<main>
+			<div class="frame">
+				<h1 class="frame__title">Sketch 019: Image Motion Effect with SVG Filter</h1>
+				<nav class="frame__links">
+					<!--a href="">All Sketches</a-->
+					<a href="https://github.com/codrops/codrops-sketches/tree/main/019-image-motion-svg-filter">GitHub</a>
+					<!--a href="">Details</a-->
+				</nav>
+			</div>
+			<div class="content">
+				<svg id="theSVG" width="100%" height="100%" viewBox="0 0 600 750">
+					<filter id="imgFilter">
+						<feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="5" seed="4" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence1"/>
+						<feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap3"/>
+					</filter>
+					<g>
+						<image xlink:href="img/1.jpg" x="150" y="187.5" width="300" height="375" filter="url(#imgFilter)"/>
+					</g>
+				</svg>
+			</div>
+		</main>
+		<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Sketch 014: Custom Cursor (filter effect and delayed motion) Demo | Codrops</title>
+		<meta name="description" content="A custom SVG cursor with two circles, filter hover effect and delayed motion." />
+		<meta name="keywords" content="motion trail, codrops sketch, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="https://tympanus.net/Sketches/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+	</head>
+	<body>
+		<main>
+			<div class="frame">
+				<h1 class="frame__title">Sketch 014: Custom Cursor (filter effect and delayed motion)</h1>
+				<nav class="frame__links">
+					<!--a href="">All Sketches</a-->
+					<a href="https://github.com/codrops/codrops-sketches/tree/main/014-custom-cursor-filter-2">GitHub</a>
+					<!--a href="">Details</a-->
+				</nav>
+			</div>
+			<nav class="menu">
+				<a class="menu__item" href="#">Tanha</a>
+				<a class="menu__item" href="#">Nirvana</a>
+				<a class="menu__item" href="#">Anatman</a>
+				<a class="menu__item" href="#">Tathata</a>
+			</nav>
+		</main>
+		<svg class="cursor" width="120" height="120" viewBox="0 0 120 120" data-radius-enter="34">
+			<defs>
+				<filter id="cursor-filter" x="-50%" y="-50%" width="200%" height="200%" 
+				filterUnits="objectBoundingBox">
+					<feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+					<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="50" in="SourceGraphic" />
+				</filter>
+			</defs>
+			<circle class="cursor__inner" cx="60" cy="60" r="15"/>
+		</svg>
+		<svg class="cursor" width="120" height="120" viewBox="0 0 120 120" data-radius-enter="29" data-amt="0.1">
+			<circle class="cursor__inner" cx="60" cy="60" r="20"/>
+		</svg>
+		<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,160 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	--color-text: #000;
+    --color-bg-view-1: #9da0dd;
+    --color-bg-view-2: #5d61b4;
+    --color-link: #000;
+    --color-link-hover: #000;
+    --color-button: #000;
+    --color-button-hover: #22267d;
+	color: var(--color-text);
+	background-color: var(--color-bg-view-1);
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid #fff;
+	background: transparent;
+}
+
+.unbutton {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.unbutton:focus {
+	outline: none;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 100vh;
+}
+
+.frame {
+	grid-area: 1 / 1 / 2 / 2;
+	padding: 1.5rem 2rem 10vh;
+	text-align: center; 
+	position: relative;
+}
+
+.frame__title {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.frame__links {
+	margin: 0.5rem 0 2rem;
+}
+
+.frame__links a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.button {
+	color: var(--color-button);
+	border-radius: 30px;
+	min-width: 150px;
+	padding: 1rem 2rem;
+	border: 1px solid currentColor;
+}
+
+.button:hover,
+.button:focus-visible {
+	color: var(--color-button-hover);
+}
+
+.frame--view-open .button-open {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.view {
+	position: relative;
+	grid-area: 1 / 1 / 2 / 2;
+	display: grid;
+	place-items: center;
+}
+
+.view--2 {
+	background: var(--color-bg-view-2);
+	pointer-events: none;
+	opacity: 0;
+}
+
+.view.view--open {
+	pointer-events: auto;
+	opacity: 1;
+}
+
+.overlay {
+	grid-area: 1 / 1 / 2 / 2;
+	position: relative;
+	z-index: 1000;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		padding: 1.5rem 2rem 0;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		grid-template-areas: 'title links sponsor';
+		grid-gap: 3vw;
+		justify-content: space-between;
+		text-align: left;
+	}
+	.frame__links {
+		margin: 0;
+	}
+}

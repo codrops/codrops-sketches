@@ -15,6 +15,18 @@ A collection of demo variations, ideas, raw concepts &amp; experiments.
   - [Sketch 008: Image Motion Trail (Circle)](https://tympanus.net/Sketches/008-image-motion-trail-circle/)
   - [Sketch 009: Image Motion Trail (Perspective)](https://tympanus.net/Sketches/009-image-motion-trail-perspective/)
   - [Sketch 010: Image Motion Trail (Perspective)](https://tympanus.net/Sketches/010-image-motion-trail-perspective/)
+  - [Sketch 011: Custom Cursor (filled circle)](https://tympanus.net/Sketches/011-custom-cursor-filled-circle/)
+  - [Sketch 012: Custom Cursor (two circles, one filled)](https://tympanus.net/Sketches/012-custom-cursor-two-circles/)
+  - [Sketch 013: Custom Cursor (two circles with filter effect)](https://tympanus.net/Sketches/013-custom-cursor-filter/)
+  - [Sketch 014: Custom Cursor (filter effect and delayed motion)](https://tympanus.net/Sketches/014-custom-cursor-filter-2/)
+  - [Sketch 015: Custom Cursor (multiple circles with filter effect) ](https://tympanus.net/Sketches/015-custom-cursor-filter-3/)
+  - [Sketch 016: Custom Cursor (filled circle with filter effect)](https://tympanus.net/Sketches/016-custom-cursor-filter-4/)
+  - [Sketch 017: Custom Cursor (stroke circle with filter effect)](https://tympanus.net/Sketches/017-custom-cursor-filter-5/)
+  - [Sketch 018: Custom Cursor (two circles with filter and delays)](https://tympanus.net/Sketches/018-custom-cursor-filter-6/)
+  - [Sketch 019: Image Motion Effect with SVG Filter](https://tympanus.net/Sketches/019-image-motion-svg-filter/)
+  - [Sketch 020: Image Motion Effect with SVG Filter](https://tympanus.net/Sketches/020-image-motion-svg-filter-2/)
+  - [Sketch 021: SVG Path Page Transition (Vertical)](https://tympanus.net/Sketches/021-svg-path-page-transition-vertical/)
+  - [Sketch 022: SVG Path Page Transition (Horizontal)](https://tympanus.net/Sketches/022-svg-path-page-transition-horizontal/)
 </details>
 
 
