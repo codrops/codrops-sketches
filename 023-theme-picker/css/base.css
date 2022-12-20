@@ -1,0 +1,280 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	--color-text: #000000;
+    --color-bg: #b6b6b6;
+    --color-link: #fff;
+    --color-link-hover: #000;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid #fff;
+	background: transparent;
+}
+
+.unbutton {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.unbutton:focus {
+	outline: none;
+}
+
+.frame {
+	padding: 1.5rem 2rem 10vh;
+	text-align: center; 
+	position: relative;
+	z-index: 100;
+	pointer-events: none;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.frame a {
+	pointer-events: auto;
+}
+
+.frame__title {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.frame__links a:not(:last-child) {
+	margin-right: 1rem;
+}
+
+.credit {
+	margin: 0;
+	grid-area: credit;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	position: relative;
+}
+
+.row__label {
+	line-height: 1;
+	display: flex;
+	cursor: pointer;
+	gap: 0.75rem;
+	align-items: center;
+	font-size: 1.15rem;
+	padding: 1.5rem 2rem 1.5rem 3rem;
+	background: rgba(0,0,0,0.1);
+	border-radius: 2rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.row__label-text {
+	display: block;
+	position: relative;
+	z-index: 10;
+}
+
+.row__label-arrow {
+	display: block;
+	font-size: 0.75rem;
+	position: relative;
+	z-index: 10;
+	color: rgba(0,0,0,0.2);
+}
+
+.row__label::before {
+	z-index: 1;
+	content: '';
+	background: #fff;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	transition: transform 0.3s ease-out;
+	transform: translate3d(-30%, 70%, 0);
+	pointer-events: none;
+}
+
+.row__label:focus {
+	outline: 0;
+}
+
+.row__label:focus::before,
+.row__label:hover::before {
+	transform: translate3d(0,0,0);
+}
+
+.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.colorpicker {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.picker {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	z-index: 1000;
+	grid-template-columns: repeat(16,6.25vmax);
+	grid-template-rows: repeat(16,6.25vmax);
+}
+
+.picker__item {
+	position: relative;
+	cursor: pointer;
+}
+
+.picker__item:nth-child(-n+16) i,
+.picker__item:nth-child(16n+17) i {
+	z-index: 1000;
+	background: rgb(255, 255, 255);
+	position: absolute;
+}
+
+.picker__item:nth-child(-n+16):not(:nth-child(1)) i:nth-child(2) {
+	height: 100vh;
+	width: 2px;
+	top: 0;
+	left: -1px;
+}
+
+.picker__item:nth-child(16n+17) i {
+	width: 100vw;
+	height: 2px;
+	left: 0;
+	top: -1px;
+}
+
+.picker__item:nth-child(-n+16) i {
+	will-change: transform;
+}
+
+.picker__item-inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor: pointer;
+	will-change: transform;
+}
+
+.picker__item-inner::after {
+	content: '';
+	position: absolute;
+	width: calc(100% - 1px);
+	height: calc(100% - 1px);
+	border: 6px solid rgba(255,255,255,0.6);
+	top: 1px;
+	left: 1px;
+	opacity: 0;
+	transition: opacity 2.5s ease;
+}
+
+.picker__item-inner:hover::after {
+	opacity: 1;
+	transition: opacity 0.1s linear;
+}
+
+.frame,
+.row__label {
+	transition: opacity 0.4s;
+
+}
+
+.picker-visible .frame,
+.picker-visible .row__label {
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		padding: 1.5rem 2rem;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		grid-template-areas: 'title links sponsor' 'credit credit credit';
+		grid-column-gap: 3vw;
+		grid-row-gap: 1rem;
+		justify-content: space-between;
+		align-content: space-between;
+		text-align: left;
+	}
+	.content {
+		height: 100vh;
+	}
+}

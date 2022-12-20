@@ -54,6 +54,7 @@ a:focus-visible {
 	padding: 1.5rem 2rem 10vh;
 	text-align: center; 
 	position: relative;
+	z-index: 100;
 }
 
 .frame__title {

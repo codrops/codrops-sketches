@@ -83,6 +83,12 @@ main {
 	padding: 1.5rem 2rem 10vh;
 	text-align: center; 
 	position: relative;
+	z-index: 100;
+	pointer-events: none;
+}
+
+.frame a {
+	pointer-events: auto;
 }
 
 .frame__title {
