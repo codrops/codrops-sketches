@@ -1,0 +1,182 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    --color-text: #fff;
+    --color-bg: #000;
+    --color-link: rgba(255,255,255,0.7);
+    --color-link-hover: #fff;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+    content: '';
+    position: fixed;
+    z-index: 1000;
+}
+
+.js .loading::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg);
+}
+
+.js .loading::after {
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: var(--color-link);
+    animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+    to {
+        opacity: 1;
+        transform: scale3d(0.5,0.5,1);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    outline: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+    /* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+    outline: none;
+    background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+    /* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+    background: transparent;
+}
+
+a:focus-visible {
+    /* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+    outline: 2px solid #fff;
+    background: transparent;
+}
+
+.unbutton {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.unbutton:focus {
+    outline: none;
+}
+
+.frame {
+    z-index: 100;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'title links sponsor' 'credits credits credits';
+    grid-column-gap: 3vw;
+    grid-row-gap: 1rem;
+    justify-content: space-between;
+    align-content: space-between;
+    text-align: left;
+}
+
+.frame a {
+    pointer-events: auto;
+}
+
+.frame__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    grid-area: title;
+}
+
+.frame__links {
+    grid-area: links;
+}
+
+.frame__links a:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.frame__credits {
+    grid-area: credits;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vh;
+}
+
+.grid__item {
+    height: 47.5vh; 
+    /* For an item height of 50vh we need to consider the grid gap and remove half of it from the item height. 
+    Like that we guarantee that the looping content starts seamlessly. If the gap would be 2vh, our item height would be 49vh */
+    background-size: cover;
+    background-position: 50% 20%;
+}
+
+.grid__item:nth-child(3n-2) {
+	border-radius: 0 2rem 2rem 0;
+}
+
+.grid__item:nth-child(3n) {
+	border-radius: 2rem 0 0 2rem;
+}
+
+.grid__item:nth-child(3n-1) {
+	border-radius: 2rem;
+}
+
+@media screen and (min-width: 53em) {
+    .frame {
+        height: 100vh;
+        align-items: space-between;
+    }
+}

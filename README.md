@@ -32,6 +32,17 @@ A collection of demo variations, ideas, raw concepts &amp; experiments.
   - [Sketch 023: Background/Theme Picker](https://tympanus.net/Sketches/23-theme-picker/)
 </details>
 
+<details open>
+  <summary><b>2023</b></summary>
+
+  - [Sketch 024: Infinite Loop Scrolling](https://tympanus.net/Sketches/024-infinite-loop-scrolling/)
+  - [Sketch 025: Infinite Loop Scrolling (Horizontal)](https://tympanus.net/Sketches/025-infinite-loop-scrolling-horizontal/)
+  - [Sketch 026: Infinite Loop Scrolling (Animation)](https://tympanus.net/Sketches/026-infinite-loop-scrolling-animation/)
+  - [Sketch 027: Infinite Loop Scrolling (ScaleY and Opacity)](https://tympanus.net/Sketches/027-infinite-loop-scrolling-animation-2/)
+  - [Sketch 028: Infinite Loop Scrolling (ScaleX and ScaleY)](https://tympanus.net/Sketches/028-infinite-loop-scrolling-animation-3/)
+  - [Sketch 029: Infinite Loop Scrolling (3D)](https://tympanus.net/Sketches/029-infinite-loop-scrolling-animation-4/)
+</details>
+
 
 ## Credits
 
