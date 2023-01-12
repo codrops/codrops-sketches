@@ -14,6 +14,10 @@ const lenis = new Lenis({
     infinite: true
 });
 
+lenis.on('scroll',()=>{
+  ScrollTrigger.update()
+})
+
 function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -39,7 +43,7 @@ imagesLoaded( document.querySelectorAll('.grid__item'), { background: true }, ()
             scrollTrigger: {
                 trigger: el,
                 start: "center center",
-                end: "bottom top+=1%",
+                end: "bottom top",
                 scrub: true,
                 fastScrollEnd: true,
                 onLeave: () => {
@@ -64,7 +68,7 @@ imagesLoaded( document.querySelectorAll('.grid__item'), { background: true }, ()
             filter: 'brightness(1)',
             scrollTrigger: {
                 trigger: el,
-                start: "top bottom+=1%",
+                start: "top bottom",
                 end: "bottom top",
                 scrub: true,
                 fastScrollEnd: true,
@@ -87,7 +91,7 @@ imagesLoaded( document.querySelectorAll('.grid__item'), { background: true }, ()
         .to(el, {
             scrollTrigger: {
                 trigger: el,
-                start: 'top bottom+=1%',
+                start: 'top bottom',
                 end: 'center center',
                 scrub: true,
                 onEnter: () => gsap.set(el, {transformOrigin: `100% 0%`}),
@@ -111,7 +115,7 @@ imagesLoaded( document.querySelectorAll('.grid__item'), { background: true }, ()
             scrollTrigger: {
                 trigger: el,
                 start: 'center center',
-                end: 'bottom top-=1%',
+                end: 'bottom top',
                 scrub: true,
                 onEnter: () => gsap.set(el, {transformOrigin: `0% 100%`}),
                 onEnterBack: () => gsap.set(el, {transformOrigin: `0% 100%`}),
