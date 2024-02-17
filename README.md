@@ -1,8 +1,6 @@
 # Codrops Sketches
 A collection of demo variations, ideas, raw concepts &amp; experiments. 
 
-[Sketches archive](https://tympanus.net/codrops/sketches/)
-
 ## Demos
 <details open>
   <summary><b>2022</b></summary>
